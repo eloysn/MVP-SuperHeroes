@@ -36,13 +36,13 @@ class ListViewController: UITableViewController {
         presenter.attachView(view: self)
         setupView()
         setupTable()
-        
+        presenter.fetchData()
         
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.fetchData()
+        
     }
     
     // MARK: - Configure views
