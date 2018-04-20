@@ -31,7 +31,7 @@ class ListPresenter {
                 
             case .Success(let data):
                 DispatchQueue.main.async {
-                    self?.heroes = data.superheroes
+                    self?.heroes = data.superheroes.sorted(by: { $0 > $1})
                     self?.listView?.updateResult()
                     self?.listView?.finishLoading()
                 }

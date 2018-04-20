@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct Heroe: Codable {
+struct Heroe: Codable, Comparable {
+    
+    
+    
     
     let name: String
     let photo: URL
@@ -18,6 +21,13 @@ struct Heroe: Codable {
     let groups: String
     let height: String
     
+    // MARK: - Comparable
+    static func <(lhs: Heroe, rhs: Heroe) -> Bool {
+       return lhs.name > rhs.name
+    }
     
+    static func ==(lhs: Heroe, rhs: Heroe) -> Bool {
+        return lhs.name == lhs.name
+    }
     
 }
